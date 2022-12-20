@@ -1,0 +1,36 @@
+{
+  "name": "@civtools/cdk",
+  "version": "0.0.0",
+  "private": true,
+  "description": "cdk resources for @civtools services",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "cdk": "npx cdk deploy --require-approval never --all",
+    "cdk:dev": "npm run cdk -- -c io.twin-digital.environmentType=dev -c io.twin-digital.namespace=default",
+    "lint": "npm run lint:eslint && npm run lint:package-json",
+    "lint:eslint": "eslint -c .eslintrc.js .",
+    "lint:package-json": "npmPkgJsonLint --ignorePath .npmpackagejsonlintignore .",
+    "test": "jest",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@civtools/play-by-cloud-webhook": "*",
+    "@twin-digital/cdk-patterns": "^0.1.1",
+    "aws-cdk": "^2.51.1",
+    "aws-cdk-lib": "^2.51.1",
+    "constructs": "^10.1.118",
+    "lodash": "^4.17.21",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.1.1",
+    "@types/lodash": "4.x",
+    "@types/node": "16.x",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "4.x"
+  },
+  "author": "Sean Kleinjung"
+}
